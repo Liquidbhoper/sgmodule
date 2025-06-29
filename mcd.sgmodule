@@ -1,0 +1,9 @@
+#!name=麦当劳去广告
+#!desc=去除开屏和app内弹窗
+
+[Rule]
+URL-REGEX,^https:\/\/api\.mcd\.cn\/bff\/portal\/richpop\/v2,REJECT
+URL-REGEX,^https:\/\/api\.mcd\.cn\/bff\/portal\/home\/splash\?.*,REJECT
+
+[MITM]
+hostname = %APPEND% api.mcd.cn

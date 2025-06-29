@@ -1,0 +1,11 @@
+#!name=kfc去广告
+#!desc=去除kfc开屏和app内弹窗
+
+[Rule]
+URL-REGEX,^https:\/\/dynamicad\.kfc\.com\.cn\/api\/app6\/pop,REJECT
+
+[Body Rewrite]
+http-response-jq ^http:\/\/res\.kfc\.com\.cn\/CRM\/kfcad\/configuration\/index\.json '.splash_screen.scope = ["0"]'
+
+[MITM]
+hostname = %APPEND% res.kfc.com.cn
