@@ -2,6 +2,8 @@
 #!desc=7.7.0 使用后请清除app内缓存
 
 [Rule]
+DOMAIN-SUFFIX,cdn-new-ad.wtzw.com,REJECT-DROP
+URL-REGEX,^https:\/\/api-cfg\.wtzw\.com\/v1\/adv\/index\?.*,REJECT
 DOMAIN-SUFFIX,voiceads.cn,REJECT,extended-matching // 火山广告
 DOMAIN-SUFFIX,tanx.com,REJECT,pre-matching // tanx广告联盟
 DOMAIN-KEYWORD,remad.qm989.com,REJECT,pre-matching // 阅揽星河广告
