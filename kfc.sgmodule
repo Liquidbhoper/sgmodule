@@ -3,7 +3,9 @@
 
 [Rule]
 URL-REGEX,^https:\/\/dynamicad\.kfc\.com\.cn\/api\/app6\/pop,REJECT
-
+URL-REGEX,^https:\/\/res\.kfc\.com\.cn\/CRM\/kfcad\/apphome6\/apphome.*,REJECT
+URL-REGEX,^https:\/\/dynamicad\.kfc\.com\.cn\/api\/homePage\/v3\/personalAd,REJECT
+URL-REGEX,^https:\/\/dynamicad\.kfc\.com\.cn\/api\/ai\/v2\/fixed\/feeds-fixed,REJECT
 [Body Rewrite]
 http-response-jq ^http:\/\/res\.kfc\.com\.cn\/CRM\/kfcad\/configuration\/index\.json '.splash_screen.scope = ["0"]'
 
