@@ -1,8 +1,10 @@
 #!name=库街区去开屏
 #!desc=去除库街区开屏广告
 
-[Rule]
-URL-REGEX,^https:\/\/api\.kurobbs\.com\/config\/getOpenScreen,REJECT
+[Body Rewrite]
+http-response-jq ^https:\/\/api\.kurobbs\.com\/config\/index\/windows '.data = []'
+http-response-jq ^https:\/\/api\.kurobbs\.com\/config\/getOpenScreen '.data.openScreenAd = []'
 
 [MITM]
 hostname = %APPEND% api.kurobbs.com
+
